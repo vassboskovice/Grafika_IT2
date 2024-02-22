@@ -34,10 +34,11 @@
                 HorizontalAlignment="Stretch" 
                 VerticalAlignment="Stretch"
                 FontSize="18"/>
-        <Canvas Grid.Column="1"
+        <Canvas Name="canvasBoard"
+                Grid.Column="1"
                 Grid.Row="3"
                 Grid.ColumnSpan="4"
-                Background="White" />
+                Background="White" MouseLeftButtonDown="canvasBoard_MouseLeftButtonDown" />
 
     </Grid>
 </Window>
