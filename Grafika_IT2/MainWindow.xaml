@@ -22,18 +22,20 @@
             <RowDefinition/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Button Grid.Column="1" 
+        <Button Name="ButtonOpen"
+                Grid.Column="1" 
                 Grid.Row="1"
                 Content="Open" 
                 HorizontalAlignment="Stretch" 
                 VerticalAlignment="Stretch"
-                FontSize="18"/>
-        <Button Grid.Column="3" 
+                FontSize="18" Click="ButtonOpen_Click" />
+        <Button Name="ButtonSave"
+                Grid.Column="3" 
                 Grid.Row="1"
                 Content="Save" 
                 HorizontalAlignment="Stretch" 
                 VerticalAlignment="Stretch"
-                FontSize="18"/>
+                FontSize="18" Click="ButtonSave_Click" />
         <Canvas Name="canvasBoard"
                 Grid.Column="1"
                 Grid.Row="3"

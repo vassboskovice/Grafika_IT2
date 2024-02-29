@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,18 @@ namespace Grafika_IT2
     {
       board.Add(e.GetPosition(canvasBoard));
       board.Draw(canvasBoard);
+    }
+
+    private void ButtonOpen_Click(object sender, RoutedEventArgs e)
+    {
+      var text = File.ReadAllText("data.csv");
+      board.FromString(text);
+      board.Draw(canvasBoard);
+    }
+
+    private void ButtonSave_Click(object sender, RoutedEventArgs e)
+    {
+      File.WriteAllText("data.csv", board.ToString());
     }
   }
 }

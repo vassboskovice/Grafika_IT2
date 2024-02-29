@@ -35,13 +35,39 @@ namespace Grafika_IT2
       foreach (var point in points)
       {
         Ellipse ellipse = new Ellipse();
-        ellipse.Width = 25;
-        ellipse.Height = 25;
+        ellipse.Width = 10;
+        ellipse.Height = 10;
         ellipse.Fill = Brushes.Blue;
-        Canvas.SetLeft(ellipse, point.X);
-        Canvas.SetTop(ellipse, point.Y);
+        Canvas.SetLeft(ellipse, point.X - (ellipse.Width / 2));
+        Canvas.SetTop(ellipse, point.Y - (ellipse.Height / 2));
         canvas.Children.Add(ellipse);
       }
     }
+
+    public override string ToString()
+    {
+      string text = "";
+      foreach(var point in points)
+      {
+        text += $"{point.X};{point.Y}\r\n";
+      }
+      return text;
+    }
+
+    public void FromString(string text)
+    {
+      points.Clear();
+      foreach(var line in text.Split("\r\n"))
+      {
+        var parts = line.Split(";");
+        if(parts.Length == 2)
+        {
+          double x = double.Parse(parts[0]);
+          double y = double.Parse(parts[1]);
+          points.Add(new Point(x, y));
+        }        
+      }
+    }
+    
   }
 }
