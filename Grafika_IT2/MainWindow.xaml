@@ -12,6 +12,8 @@
             <ColumnDefinition Width="130"/>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="130"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
@@ -39,8 +41,13 @@
         <Canvas Name="canvasBoard"
                 Grid.Column="1"
                 Grid.Row="3"
-                Grid.ColumnSpan="4"
+                Grid.ColumnSpan="6"
                 Background="White" MouseLeftButtonDown="canvasBoard_MouseLeftButtonDown" />
+        <Button Name="ButtonClear"
+            Grid.Column="5" 
+            Grid.Row="1"
+            Content="Clear"
+            FontSize="18" Click="ButtonClear_Click" />
 
     </Grid>
 </Window>

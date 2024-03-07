@@ -62,8 +62,14 @@ namespace Grafika_IT2
         var parts = line.Split(";");
         if(parts.Length == 2)
         {
-          double x = double.Parse(parts[0]);
-          double y = double.Parse(parts[1]);
+          if (!double.TryParse(parts[0], out var x))
+          {
+            continue;
+          }
+          if(!double.TryParse(parts[1], out var y))
+          {
+            continue;
+          }
           points.Add(new Point(x, y));
         }        
       }

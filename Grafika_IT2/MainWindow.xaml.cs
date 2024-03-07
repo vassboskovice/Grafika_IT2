@@ -44,7 +44,21 @@ namespace Grafika_IT2
 
     private void ButtonSave_Click(object sender, RoutedEventArgs e)
     {
-      File.WriteAllText("data.csv", board.ToString());
+      try
+      {
+        File.WriteAllText("data.csv", board.ToString());
+        MessageBox.Show("Soubor byl uložen");
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show("Soubor nebyl uložen z důvodu chyby:\r\n" + ex.Message);
+      }     
+    }
+
+    private void ButtonClear_Click(object sender, RoutedEventArgs e)
+    {
+      board.Clear();
+      board.Draw(canvasBoard);
     }
   }
 }
